@@ -1,0 +1,436 @@
+/*Inicio Contenido*/
+.slider{
+    width: 100%;
+
+    img{
+        width: 100%;
+        box-shadow: 0px 4px 4px $shadow-medium;
+    }
+
+    h1{
+        position: absolute;
+        top: 100px;
+        left: 8.33%;
+        font-size: 40px;
+        font-weight: 300;
+        color: white;
+        text-shadow: 2px 4px 4px $shadow-heavy;
+        animation-name: displayH1;
+        animation-duration: 2s;
+
+        @keyframes displayH1 {
+            from {
+                opacity: 0;
+                transform: translateY(80px)
+            } 
+            to {
+                opacity: 1;
+                transform: translateY(0px)
+            }
+        }
+
+        a{
+
+            span{
+                background: linear-gradient(90deg, #FF0000 0%, #FFBE41 30%, #35EA68 60%, #27D8FF 90%, #FFFFFF 150%);
+                background-clip: text;
+                -webkit-text-fill-color: transparent; 
+                text-shadow: none;
+                filter: drop-shadow(2px 4px 4px $shadow-heavy);
+            }
+        }
+    }
+}
+
+.parentInicio{
+    text-align: center;
+    
+    h2{
+        margin: 40px 0px;
+    }
+
+    .width{
+        width: $ancho-s;
+    }
+
+    .intro{
+        flex-wrap: wrap;
+
+        div{
+            flex-wrap: wrap;
+
+            img{
+                width: 90%;
+                margin: auto;
+            }
+    
+            div{
+                width: 100%;
+                margin: auto 0;
+
+                h3{
+                    padding: 20px 0;
+                }
+
+                p{
+                    padding-bottom: 30px;
+                }
+            }
+        }
+
+        .columnReverse{
+            flex-direction: column-reverse;
+        }
+    }
+}
+
+.garantia{
+    text-align: center;
+
+    h3{
+        padding: 20px 0;
+    }
+
+    .flex{
+        flex-wrap: wrap;
+
+        div{
+            width: 100%;
+            padding: 2% 0;
+
+            img{
+                width: 83.33%;
+                box-shadow: 0px 4px 4px $shadow-medium;
+            }
+    
+            p{
+                font-weight: bold;
+                padding-top: 3%;
+            }
+        }
+    }
+
+    p{
+        width: 83.33%;
+        margin: auto;
+        padding-top: 3%;
+    }
+}
+
+.trabajosRecientes{
+
+    h3{
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .flex{
+        flex-wrap: wrap;
+
+        img{
+            width: 99%;
+            padding: 0;
+            margin: 1% 0;
+        }
+    }
+}
+
+.banner{
+    width: 100%;
+    position: relative;
+    text-align: center;
+    overflow-y: hidden;
+    height: fit-content;
+    margin-top: 6px;
+
+    .banner_md{
+        display: none;
+    }
+
+    img{
+        width: 100%;
+        vertical-align: bottom;
+    }
+
+    div{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: $ancho-s;
+        margin: auto;
+        text-align: center;
+        color: white;
+        text-shadow: 0px 4px 4px $shadow-medium;
+
+        h3{
+            font-size: 24px;
+            font-weight: 300;
+
+            .chat{
+                width: 60px;
+                color: white;
+                vertical-align: middle;
+                margin-right: 5px;
+            }
+        }
+
+        p{
+            padding: 10px 0;
+        }
+
+        .mail{
+            color: white;
+        }
+    }
+}
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .slider{
+
+        h1{
+            top: 150px;
+        }
+    }
+
+    .parentInicio{
+
+        .intro{
+
+            div{
+                
+                img{
+                    width: 58.33%;
+                }
+    
+                div{
+                    width: 41.66%;
+                }
+            }
+
+            .columnReverse{
+                flex-direction: row;
+            }
+        }
+    }
+
+    .garantia{
+
+        .flex{
+            justify-content: space-between;
+
+            div{
+                width: 49%;
+                padding: 1% 0;
+
+                img{
+                    width: 100%;
+                }
+            }
+
+            :nth-child(3){
+                margin: auto;
+            }
+        }
+
+        p{
+            width: 50%;
+            padding: 2%;
+        }
+    }
+
+    .trabajosRecientes{
+    
+        .flex{
+            justify-content: space-between;
+
+            img{
+                width: 49%;
+            }
+        }
+    }
+
+    .banner{
+
+        .banner_sm{
+            display: none;
+        }
+    
+        .banner_md{
+            display: inline;
+        }
+
+        div{
+            width: 66.66%
+        }
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .slider{
+    
+        h1{
+            width: $ancho-xl;
+            left: calc((100% - $ancho-l) / 2);
+        }
+    }
+    
+    .parentInicio{
+        text-align: left;
+
+        .width{
+            width: $ancho-l;
+        }
+
+        .intro{
+
+            div{
+
+                img{
+                    width: 50%;
+                }
+    
+                div{
+                    width: 50%;
+                }
+            }
+        }
+
+        .garantia{
+
+            .flex{
+                justify-content: space-between;
+    
+                div{
+                    width: 32%;
+                }
+    
+                :nth-child(3){
+                    margin: 0;
+                }
+            }
+        }
+
+        .trabajosRecientes{
+
+            .flex{
+
+                img{
+                    cursor: pointer;
+                    transition: 0.3s;
+
+                    &:hover{
+                        filter: brightness(70%);
+                    }
+                }
+
+                .modal {
+                    display: block;
+                    position: fixed;
+                    z-index: 1;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: auto;
+                    background-color: rgba(0,0,0,0.7);
+
+                    .close {
+                        cursor: pointer;
+                        color: white;
+                        position: absolute;
+                        top: 25px;
+                        right: 30px;
+                        width: 35px;
+
+                        &:hover{
+                            color: $color-menu-hover;
+                        }
+                    }
+
+                    > img{
+                        cursor: auto;
+                        margin: 0;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        animation-name: zoom;
+                        animation-duration: 0.5s;
+
+                        &:hover{
+                            filter: none;
+                        }
+                    }
+
+                    @keyframes zoom {
+                        from {transform: translate(-50%, -50%) scale(0)} 
+                        to {transform: translate(-50%, -50%) scale(1)}
+                    }
+                }
+            }
+        }
+    }
+
+    .banner{
+
+        div{
+            width: $ancho-l;
+
+            h3{
+                width: 66.66%;
+                margin: auto;
+            }
+
+            p{
+                width: 66.66%;
+                margin: auto;
+            }
+        }
+    }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .slider{
+        h1{
+            width: $ancho-xl;
+            left: calc((100% - $ancho-xl) / 2);
+        }
+    }
+
+    .parentInicio{
+
+        .width{
+            width: $ancho-xl;
+        }
+
+        .intro{
+
+            .flex{
+                justify-content: space-between;
+
+                img{
+                    width: 40%;
+                }
+            }
+        }
+
+        .trabajosRecientes{
+    
+            .flex{
+                justify-content: space-between;
+    
+                img{
+                    width: 32%;
+                }
+            }
+        }
+    }
+}

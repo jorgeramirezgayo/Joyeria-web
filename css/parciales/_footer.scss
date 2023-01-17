@@ -1,0 +1,120 @@
+/* Footer */
+.col-4{width: 100%;}
+
+footer{
+    background-color: #F6F6F6;
+    width: 100%;
+
+    .footerContent{
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        &>div{
+            padding-top: 40px;
+            
+            p{
+                padding-bottom: 10px;
+
+                .location{
+                    width: 30px;
+                    color: $color-location;
+                    vertical-align: bottom;
+                    margin-right: 5px;
+                }
+
+                .phone{
+                    width: 30px;
+                    color: $color-phone;
+                    vertical-align: bottom;
+                    margin-right: 5px;
+                }
+
+                .clock{
+                    width: 30px;
+                    color: $color-clock;
+                    vertical-align: middle;
+                    margin-right: 5px;
+                }
+            }
+            
+            ul{
+                li{
+                    padding: 5px 0;
+
+                    a{
+                        &:hover{
+                            color: $color-menu-hover;
+                        }
+                    }
+                }
+            }
+
+            .flex-rrss{
+                display: flex;
+                justify-content: space-between;
+                width: 50%;
+
+                .instagram{
+                    fill: $color-instagram;
+                }
+
+                .facebook{
+                    fill: $color-facebook;
+                }
+
+                .twitter{
+                    fill: $color-twitter;
+                }
+            }
+        }
+    }
+
+    .width{
+        width: $ancho-s;
+    };
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    footer{
+
+        .footerContent{
+            flex-wrap: nowrap;
+
+            &>div{
+                padding: 5%;
+
+                .flex-rrss{
+                    width: 100%;
+                }
+            }
+        };
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    footer{
+
+        .width{
+            width: $ancho-l;
+        }
+    }
+}
+
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    
+    .col-4 {width: 33.33%;}
+
+    footer{
+
+        .width{
+            width: $ancho-xl;
+        }
+    }
+}

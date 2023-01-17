@@ -1,0 +1,235 @@
+/* Header*/
+header {
+    box-shadow: 0px 4px 4px $shadow-light;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    .headerContent {
+        justify-content: center;
+        align-items: center;
+
+        .logo {
+            width: 120px;
+            
+            .logoMain {
+                font-family: Voguer Sans;
+                font-size: 25px;
+                line-height: 25px;
+                text-align: center;
+                margin-top: 2px;
+
+                span{
+                    clip-path: polygon(100% 0, 100% 45%, 9% 100%, 0 100%, 0 0);
+                }
+            }
+
+            .logoSub{
+                font-family: Inter;
+                font-size: 8px;
+                text-align: center;
+                margin-top: 2px;
+                letter-spacing: 8px;
+            }
+        }
+
+        nav {
+            display: none;
+        }
+
+        .menuIcon {
+            display: inline-block;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            left: 8.33%;
+        }
+
+        .correctPosition {
+            left: 10.4125%;
+        }
+
+        .bar1,
+        .bar2,
+        .bar3 {
+            width: 30px;
+            height: 2px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .background_dark {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            background-color: $shadow-heavy;
+        }
+
+        .change {
+            width: 80%;
+            height: 100%;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: white;
+            box-shadow: 0px 4px 4px $shadow-light;
+            overflow: hidden;
+            border-right: 20px solid white;
+            animation-name: displayMenu;
+            animation-duration: 1s;
+
+            @keyframes displayMenu {
+                from {
+                    left: -600px;
+                }
+
+                to {
+                    left: 0px;
+                }
+            }
+
+            .menuIcon{
+                animation-name: displayIcon;
+                animation-duration: 2.5s;
+
+                @keyframes displayIcon {
+                    from {
+                        opacity: 0;
+                    }
+
+                    to {
+                        opacity: 1;
+                    }
+                }
+                    
+                .bar1 {
+                    transform: translate(0, 8px) rotate(45deg);
+                }
+
+                .bar2 {
+                    opacity: 0;
+                }
+
+                .bar3 {
+                    transform: translate(0, -8px) rotate(-45deg);
+                }
+
+                nav {
+                    display: block;
+                }
+
+                .menuNav {
+                    position: absolute;
+                    top: -15px;
+                    left: 100px;
+                    width: 200px;
+                    padding-right: 20px;
+
+                    li {
+                        padding: 20px;
+                        border-bottom: 1px solid $color-menu-hover;
+
+                        a {
+                            animation-name: displayLinks;
+                            animation-duration: 2.5s;
+
+                            @keyframes displayLinks {
+                                from {
+                                    opacity: 0;
+                                }
+
+                                to {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    div {
+        .flecha_inicio {
+            width: 30px;
+            position: fixed;
+            z-index: 1;
+            bottom: 50px;
+            right: 20px;
+        }
+    }
+}
+
+.relative {
+    position: relative;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .width {
+        width: $ancho-l;
+    }
+
+    header {
+        .headerContent {
+            justify-content: space-between;
+
+            .menuIcon {
+                &>* {
+                    display: none;
+                }
+            }
+
+            nav {
+                display: block;
+
+                ul {
+                    li {
+                        display: inline;
+
+                        a {
+                            padding: 0 10px;
+                            font-size: 14px;
+
+                            &:hover {
+                                color: $color-menu-hover;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .change {
+                display: none;
+
+                .menuNav {
+                    display: none;
+                }
+            }
+        }
+
+        div {
+            .flecha_inicio {
+                display: none;
+            }
+        }
+    }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .width {
+        width: $ancho-xl;
+    }
+}

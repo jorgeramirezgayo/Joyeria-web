@@ -1,0 +1,42 @@
+
+/* Generales */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Inter;
+    overflow-y: auto;
+}
+
+img{
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+ul{
+    list-style: none;
+}
+
+h3{
+    font-family: Cinzel;
+}
+
+.flex{
+    display: flex;
+}
+
+.width{
+    width: $ancho-s;
+    margin: auto;
+}
+
+.overflow-y{
+    overflow-y: hidden;
+}
