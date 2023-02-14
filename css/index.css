@@ -8,14 +8,26 @@
   font-style: normal;
 }
 /* Generales */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation: none !important;
+            animation: none !important;
+    transition: none !important;
+  }
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Inter;
+  font-size: 100%;
   overflow-y: auto;
 }
 
@@ -36,17 +48,51 @@ h3 {
   font-family: Cinzel;
 }
 
-.flex {
-  display: flex;
+form, input, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
 }
 
-.width {
-  width: 83.34%;
-  margin: auto;
+/* Iconos generales */
+.location {
+  width: 1.875em;
+  color: #EA4335;
+  vertical-align: bottom;
+  margin-right: 0.3125em;
 }
 
-.overflow-y {
-  overflow-y: hidden;
+.phone {
+  width: 1.875em;
+  color: #35EA68;
+  vertical-align: bottom;
+  margin-right: 0.3125em;
+}
+
+.mail {
+  width: 1.875em;
+  color: #FFBE41;
+  vertical-align: bottom;
+  margin-right: 0.3125em;
+}
+
+.clock {
+  width: 1.875em;
+  color: #35A9EA;
+  vertical-align: middle;
+  margin-right: 0.3125em;
+}
+
+/* Iconos rrss */
+.instagram {
+  fill: url(#lgInstagram);
+}
+
+.facebook {
+  fill: #475993;
+}
+
+.twitter {
+  fill: #03a9f4;
 }
 
 /* Body */
@@ -1103,4 +1149,4 @@ footer .footer-content__rrss {
 }
 .contacto__section-maps__map {
   width: 100%;
-}/*# sourceMappingURL=estilos.css.map */
+}/*# sourceMappingURL=index.css.map */

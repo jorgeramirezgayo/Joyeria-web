@@ -1,120 +1,82 @@
 /* Footer */
-.col-4{width: 100%;}
-
 footer{
     background-color: #F6F6F6;
     width: 100%;
 
-    .footerContent{
-        justify-content: space-between;
-        flex-wrap: wrap;
-
-        &>div{
-            padding-top: 40px;
-            
-            p{
-                padding-bottom: 10px;
-
-                .location{
-                    width: 30px;
-                    color: $color-location;
-                    vertical-align: bottom;
-                    margin-right: 5px;
-                }
-
-                .phone{
-                    width: 30px;
-                    color: $color-phone;
-                    vertical-align: bottom;
-                    margin-right: 5px;
-                }
-
-                .clock{
-                    width: 30px;
-                    color: $color-clock;
-                    vertical-align: middle;
-                    margin-right: 5px;
-                }
-            }
-            
-            ul{
-                li{
-                    padding: 5px 0;
-
-                    a{
-                        &:hover{
-                            color: $color-menu-hover;
-                        }
-                    }
-                }
-            }
-
-            .flex-rrss{
-                display: flex;
-                justify-content: space-between;
-                width: 50%;
-
-                .instagram{
-                    fill: $color-instagram;
-                }
-
-                .facebook{
-                    fill: $color-facebook;
-                }
-
-                .twitter{
-                    fill: $color-twitter;
-                }
-            }
-        }
-    }
-
-    .width{
+    .footer-content{
         width: $ancho-s;
-    };
-}
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2.5em;
+        padding: 2.5em 0;
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-    footer{
-
-        .footerContent{
+        @media (min-width: 768px) {
             flex-wrap: nowrap;
+            gap: 0;
+            justify-content: space-evenly;
+        }
 
-            &>div{
-                padding: 5%;
-
-                .flex-rrss{
-                    width: 100%;
-                }
-            }
-        };
-    }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-    footer{
-
-        .width{
+        @media (min-width: 992px) {
             width: $ancho-l;
         }
-    }
-}
 
-
-// X-Large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-    
-    .col-4 {width: 33.33%;}
-
-    footer{
-
-        .width{
+        @media (min-width: 1200px) {
             width: $ancho-xl;
+        }
+        
+        &__div{
+            width: 100%;
+
+            @media (min-width: 768px) {
+                width: 25%;
+            }
+        }
+
+        &__text{
+            padding: 0.3125em 0;
+        }
+
+        &__li{
+            padding: 0.3125em 0;
+        }
+
+        &__link{
+                    
+            &:hover{
+                color: $color-menu-hover;
+            }
+        }
+
+        &__info{
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            margin: 0.3125em 0;
+        }
+
+        &__info-content{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5em;
+            margin-top: 0.5em;
+        }
+
+        &__info-text{
+            width: 100%;
+        }
+
+        &__rrss{
+            width: 50%;
+            margin-top: 0.625em;
+            display: flex;
+            justify-content: space-between;
+
+            @media (min-width: 768px) {
+                width: 100%;
+            }
         }
     }
 }

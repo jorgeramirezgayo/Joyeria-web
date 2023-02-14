@@ -1,3 +1,5 @@
+✨ Actualización [(Puedes ver la lista de cambios aquí)](https://github.com/jorgeramirezgayo/joyeria-web#-actualización)
+
 # Joyería web
 Este proyecto es un trabajo de clase con fines educativos. En este, se pedía 
 hacer una página web corporativa para una empresa de temática a elegir. La 
@@ -80,3 +82,26 @@ segunda versión con buenas prácticas.
 
 Si has llegado hasta aquí, espero que te haya gustado. Con esto me 
 despido, muchas gracias por tu interés 😄, ¡un saludo!
+
+## ✨ Actualización
+Esta es la segunda versión de la página en la cual me he centrado en implementar las buenas prácticas que he ido aprendiendo.
+- BEM -> Mayor especificidad y escalabilidad.
+Esta es una comparativa de la especificidad antes de utilizar bem y después. Cuanto mayor especificidad, mayor escalabilidad tendrá la página y más fácil será de mantener. Menos picos indican mejor resultado.
+
+![](https://github.com/jorgeramirezgayo/joyeria-web/blob/main/images/README/CSS%20Specificity%20Graph.jpg "CSS Specificity Graph")
+
+- Todos los tamaños en px ahora en em/rem para que se adapte al tamaño de la letra del dispositivo.
+- Altura de la imagen principal y banner de ayuda corregidas. El problema era que la imagen no se adaptaba bien al tamaño de la página, solucionado con object-fit. Alternativa más compatible con navegadores antiguos -> utilizar background: url().
+- Trabajos recientes con display grid. Al ser una cuadrícula en 2D viene mejor grid que flex.
+- Formulario con el mismo tamaño y espacio de letra. Por defecto, los <input>, los <textarea> y otros elementos de formulario tienen diferente tamaño de letra entre ellos.
+
+![](https://github.com/jorgeramirezgayo/joyeria-web/blob/main/images/README/Form%20font.jpg "Formulario tamaño letra")
+
+- Labels "invisibles" en los input para los lectores de pantalla. Label vinculado al checkbox.
+- Js inline -> Externo, dividido en partes y actualizado.
+- Formulario con sencilla validación.
+- Animaciones con scroll (con reduced-motion para quienes no quieran animaciones). 
+- Mini-rework footer.
+- Scroll behaviour: smooth.
+- Todas las etiquetas img tienen su respectivo alt.
+- Rutas relativas, cambio de nombre de carpeta images->img, estilos.css->index.css.

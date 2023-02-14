@@ -5,113 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="icon" type="favicon/x-icon" href="images/favicon.svg" />
-    <script>
-        function quitarMenu(mediaQuery) {
-            let elementMenu = document.getElementById("menuContainer");
-            let elementMenuNav = document.getElementById("menuContainerNav");
-            let body = document.getElementsByTagName("body")[0];
-            let bg_dark = document.getElementById("bg_dark");
-            let header = document.getElementsByTagName("header")[0];
-            let menuIcon = document.getElementsByClassName("menuIcon")[0];
-
-            if (mediaQuery.matches && elementMenu.classList.contains("change")) {
-                elementMenu = elementMenu.classList.toggle("change");
-                elementMenuNav = elementMenuNav.classList.toggle("menuNav");
-                body = body.classList.toggle("overflow-y");
-                bg_dark = bg_dark.classList.toggle("background_dark");
-                header = header.classList.toggle("relative");
-                menuIcon.classList.toggle("correctPosition");
-            }
-        };
-
-        function desplegarMenu() {
-            let elementMenu = document.getElementById("menuContainer");
-            elementMenu = elementMenu.classList.toggle("change");
-            let menuIcon = document.getElementsByClassName("menuIcon")[0];
-            menuIcon.classList.toggle("correctPosition");
-            let elementMenuNav = document.getElementById("menuContainerNav");
-            elementMenuNav.classList.toggle("menuNav");
-            let body = document.getElementsByTagName("body")[0];
-            body = body.classList.toggle("overflow-y");
-            let bg_dark = document.getElementById("bg_dark");
-            bg_dark = bg_dark.classList.toggle("background_dark");
-            let header = document.getElementsByTagName("header")[0];
-            header = header.classList.toggle("relative");
-
-            let mediaQuery = window.matchMedia("(min-width: 992px)");
-            quitarMenu(mediaQuery);
-            mediaQuery.addListener(quitarMenu);
-        }
-
-        function openModal(imagen){
-            if (window.matchMedia("(min-width: 991px)").matches){
-                let ruta = imagen.src.substring(imagen.src.indexOf("/images") + 1);
-                imagen.outerHTML=`
-                    <img id="test" src="${ruta}" alt="${imagen.alt}" onclick="openModal(this)">
-                    <div class="modal">
-                        <span onclick="closeModal()">
-                            <svg class="close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                <polygon fill="var(--ci-primary-color, currentColor)" points="427.314 107.313 404.686 84.687 256 233.373 107.314 84.687 84.686 107.313 233.373 256 84.686 404.687 107.314 427.313 256 278.627 404.686 427.313 427.314 404.687 278.627 256 427.314 107.313" class="ci-primary"/>
-                            </svg>
-                        </span>
-                        <img src="${ruta}" alt="${imagen.alt}">
-                    </div>
-                `;
-            }
-
-            let mediaQuery = window.matchMedia("(max-width: 991px)");
-            closeModalQuery(mediaQuery);
-            mediaQuery.addListener(closeModalQuery);
-        }
-
-        function closeModal(imagen){
-            document.getElementsByClassName("modal")[0].remove();
-        }
-
-        function closeModalQuery(mediaQuery){
-            if (mediaQuery.matches && document.getElementsByClassName("modal")[0].classList.contains("modal")) {
-                document.getElementsByClassName("modal")[0].remove();
-            }
-        }
-
-    </script>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="icon" type="favicon/x-icon" href="./img/favicon.svg" />
+    <script src="./js/header.js"></script>
 </head>
 <body>
     <!-- Header -->
-    <header class="relative">
-        <div class="headerContent width flex">
+    <header class="header">
+        <div class="header-content">
             <!-- Logo -->
             <a class="logo" href="index.html">
-                <p class="logoMain">MOUSS<span>O</span>N</p>
-                <p class="logoSub">ATELIER</p>
+                <p class="logo__main">MOUSS<span class="logo__clip">O</span>N</p>
+                <p class="logo__sub">ATELIER</p>
             </a>
             <!-- Menu icon -->
-            <div id="bg_dark">
+            <div id="bgDark">
                 <div id="menuContainer">
-                    <div class="menuIcon" onclick="desplegarMenu()">
-                        <div class="bar1"></div>
-                        <div class="bar2"></div>
-                        <div class="bar3"></div>
-                        <nav id="menuContainerNav">
+                    <div id="menuIcon" class="menu-icon" onclick="desplegarMenu()">
+                        <div class="menu-icon__bar1"></div>
+                        <div class="menu-icon__bar2"></div>
+                        <div class="menu-icon__bar3"></div>
+                        <nav id="menuContainerNav" class="nav-menu">
                             <ul>
-                                <li><a href="index.html">Inicio</a></li>
-                                <li><a href="servicios.html">Servicios</a> </li>
-                                <li><a href="nosotros.html">Nosotros</a></li>
-                                <li><a href="contacto.html">Contacto</a></li>
+                                <li class="nav-menu__li">
+                                    <a class="nav-menu__link" href="index.html">Inicio</a>
+                                </li>
+                                <li class="nav-menu__li">
+                                    <a class="nav-menu__link" href="servicios.html">Servicios</a>
+                                </li>
+                                <li class="nav-menu__li">
+                                    <a class="nav-menu__link" href="nosotros.html">Nosotros</a>
+                                </li>
+                                <li class="nav-menu__li">
+                                    <a class="nav-menu__link" href="contacto.html">Contacto</a>
+                                </li>
                             </ul>
                         </nav>
                     </div>
                 </div>
             </div>
             <!-- Menu -->
-            <nav>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="servicios.html">Servicios</a> </li>
-                    <li><a href="nosotros.html">Nosotros</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+            <nav class="nav-extended">
+                <ul class="nav-extended__ul">
+                    <li class="nav-extended__li">
+                        <a class="nav-extended__link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-extended__li">
+                        <a class="nav-extended__link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-extended__li">
+                        <a class="nav-extended__link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-extended__li">
+                        <a class="nav-extended__link" href="contacto.html">Contacto</a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -130,87 +77,108 @@
         </div>
     </header>
     <!-- Contenido de la página (Contiene todas las secciones para ajustar el ancho) -->
-    <section class="parentNosotros flex">
-        <section>
-            <img src="images/nuestra_tienda.jpg" alt="Diseña tu joya.">
-            <h3>Nuestra tienda</h3>
-            <p>Nos ubicamos en la Calle Diamantes nº3, en pleno centro de la capital, Madrid. Nuestra tienda lleva más
+    <div class="nosotros">
+        <section class="nosotros__section">
+            <img class="nosotros__section__img" src="./img/nuestra_tienda.jpg" alt="Nuestra tienda.">
+            <h3 class="nosotros__section__title">Nuestra tienda</h3>
+            <p class="nosotros__section__text">Nos ubicamos en la Calle Diamantes nº3, en pleno centro de la capital, Madrid. Nuestra tienda lleva más
                 de 40 años aquí, aunque no siempre ha sido así. Durante todo este tiempo ha pasado por diversas reformas
                 que han ido cambiando y mejorando la infraestructura interna así como también la fachada del local.
                 Actualmente, está recién reformada y con ganas de recibir nuevos visitantes.</p>
         </section>
-        <section>
-            <img src="images/nuestro_taller.jpg" alt="Diseña tu joya.">
-            <h3>Nuestro taller</h3>
-            <p>Aquí es donde surge toda la magia. Nuestro taller dispone de todas las máquinas y herramientas necesarias
+        <section class="nosotros__section">
+            <img class="nosotros__section__img" src="./img/nuestro_taller.jpg" alt="Nuestro taller.">
+            <h3 class="nosotros__section__title">Nuestro taller</h3>
+            <p class="nosotros__section__text">Aquí es donde surge toda la magia. Nuestro taller dispone de todas las máquinas y herramientas necesarias
                 para poder crear cualquier joya posible. Realizamos cualquier pieza de encargo así como cualquier
                 reparación de joyería tanto a particulares como a profesionales utilizando siempre materiales de primera
                 calidad. Todas nuestras creaciones van acompañadas de un certificado de calidades. También realizamos
                 todo tipo de grabados.</p>
         </section>
-        <section>
-            <img src="images/nuestra_historia.jpg" alt="Diseña tu joya.">
-            <h3>Nuestra historia</h3>
-            <p>Nos empezamos a dedicar a esto hace 40 años, cuando la curiosidad llamó a nuestra puerta y quisimos hacer
+        <section class="nosotros__section">
+            <img class="nosotros__section__img" src="./img/nuestra_historia.jpg" alt="Nuestro equipo.">
+            <h3 class="nosotros__section__title">Nuestra historia</h3>
+            <p class="nosotros__section__text">Nos empezamos a dedicar a esto hace 40 años, cuando la curiosidad llamó a nuestra puerta y quisimos hacer
                 realidad todas las joyas que imáginabamos en nuestra cabeza. Durante todo este tiempo, hemos estado
                 aprendiendo y mejorando nuestras técnicas para lograr que esto fuera posible. Hemos recibido numerosos
                 premios y realizado encargos para esos momentos tan especiales. </p>
         </section>
-    </section>
+    </div>
     <!-- Footer -->
     <footer>
-        <div class="footerContent width flex">
+        <div class="footer-content">
             <!-- Información -->
-            <div class="col-4">
-                <p>Menú:</p>
+            <div class="footer-content__div">
+                <p class="footer-content__text">Menú:</p>
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="servicios.html">Servicios</a> </li>
-                    <li><a href="nosotros.html">Nosotros</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li class="footer-content__li">
+                        <a class="footer-content__link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="footer-content__li">
+                        <a class="footer-content__link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="footer-content__li">
+                        <a class="footer-content__link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="footer-content__li">
+                        <a class="footer-content__link" href="contacto.html">Contacto</a>
+                    </li>
                 </ul>
             </div>
             <!-- Información -->
-            <div class="col-4">
-                <p>Nuestra tienda:</p>
-                <p>
-                    <svg class="location" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <path fill="var(--ci-primary-color, currentColor)"
-                            d="M253.924,127.592a64,64,0,1,0,64,64A64.073,64.073,0,0,0,253.924,127.592Zm0,96a32,32,0,1,1,32-32A32.037,32.037,0,0,1,253.924,223.592Z"
-                            class="ci-primary" />
-                        <path fill="var(--ci-primary-color, currentColor)"
-                            d="M376.906,68.515A173.922,173.922,0,0,0,108.2,286.426L229.107,472.039a29.619,29.619,0,0,0,49.635,0L399.653,286.426A173.921,173.921,0,0,0,376.906,68.515Zm-4.065,200.444L253.925,451.509,135.008,268.959C98.608,213.08,106.415,138.3,153.571,91.142a141.92,141.92,0,0,1,200.708,0C401.435,138.3,409.241,213.08,372.841,268.959Z"
-                            class="ci-primary" />
-                    </svg>
-                    Dirección:<br>
-                </p>
-                <p>C/Diamantes nº3.</p>
-                <p>
-                    <svg class="phone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <path fill="var(--ci-primary-color, currentColor)"
-                            d="M449.366,89.648l-.685-.428L362.088,46.559,268.625,171.176l43,57.337a88.529,88.529,0,0,1-83.115,83.114l-57.336-43L46.558,362.088l42.306,85.869.356.725.429.684a25.085,25.085,0,0,0,21.393,11.857h22.344A327.836,327.836,0,0,0,461.222,133.386V111.041A25.084,25.084,0,0,0,449.366,89.648Zm-20.144,43.738c0,163.125-132.712,295.837-295.836,295.837h-18.08L87,371.76l84.18-63.135,46.867,35.149h5.333a120.535,120.535,0,0,0,120.4-120.4v-5.333l-35.149-46.866L371.759,87l57.463,28.311Z"
-                            class="ci-primary" />
-                    </svg>
-                    Teléfono:<br>
-                </p>
-                <p>605 23 37 59.</p>
-                <p>
-                    <svg class="clock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <polygon fill="var(--ci-primary-color, currentColor)"
-                            points="271.514 95.5 239.514 95.5 239.514 273.611 355.127 328.559 368.864 299.657 271.514 253.389 271.514 95.5"
-                            class="ci-primary" />
-                        <path fill="var(--ci-primary-color, currentColor)"
-                            d="M256,16C123.452,16,16,123.452,16,256S123.452,496,256,496,496,388.548,496,256,388.548,16,256,16Zm0,448C141.125,464,48,370.875,48,256S141.125,48,256,48s208,93.125,208,208S370.875,464,256,464Z"
-                            class="ci-primary" />
-                    </svg>
-                    Horario de 10:00 a 14:00 y
-                    de 17:00 a 21:00.
-                </p>
+            <div class="footer-content__div">
+                <p class="footer-content__text">Nuestra tienda:</p>
+                <div class="footer-content__info">
+                    <div>
+                        <svg class="location" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="var(--ci-primary-color, currentColor)"
+                                d="M253.924,127.592a64,64,0,1,0,64,64A64.073,64.073,0,0,0,253.924,127.592Zm0,96a32,32,0,1,1,32-32A32.037,32.037,0,0,1,253.924,223.592Z"
+                                class="ci-primary" />
+                            <path fill="var(--ci-primary-color, currentColor)"
+                                d="M376.906,68.515A173.922,173.922,0,0,0,108.2,286.426L229.107,472.039a29.619,29.619,0,0,0,49.635,0L399.653,286.426A173.921,173.921,0,0,0,376.906,68.515Zm-4.065,200.444L253.925,451.509,135.008,268.959C98.608,213.08,106.415,138.3,153.571,91.142a141.92,141.92,0,0,1,200.708,0C401.435,138.3,409.241,213.08,372.841,268.959Z"
+                                class="ci-primary" />
+                        </svg>
+                    </div>
+                    <div class="footer-content__info-content">
+                        <p class="footer-content__info-text">Dirección:</p>
+                        <p class="footer-content__info-text">C/Diamantes nº3.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-content__info">
+                        <div>
+                            <svg class="phone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path fill="var(--ci-primary-color, currentColor)"
+                                    d="M449.366,89.648l-.685-.428L362.088,46.559,268.625,171.176l43,57.337a88.529,88.529,0,0,1-83.115,83.114l-57.336-43L46.558,362.088l42.306,85.869.356.725.429.684a25.085,25.085,0,0,0,21.393,11.857h22.344A327.836,327.836,0,0,0,461.222,133.386V111.041A25.084,25.084,0,0,0,449.366,89.648Zm-20.144,43.738c0,163.125-132.712,295.837-295.836,295.837h-18.08L87,371.76l84.18-63.135,46.867,35.149h5.333a120.535,120.535,0,0,0,120.4-120.4v-5.333l-35.149-46.866L371.759,87l57.463,28.311Z"
+                                    class="ci-primary" />
+                            </svg>
+                        </div>
+                        <div class="footer-content__info-content">
+                            <p class="footer-content__info-text">Teléfono:</p>
+                            <p class="footer-content__info-text">605 23 37 59.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-content__info">
+                        <div>
+                            <svg class="clock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <polygon fill="var(--ci-primary-color, currentColor)"
+                                    points="271.514 95.5 239.514 95.5 239.514 273.611 355.127 328.559 368.864 299.657 271.514 253.389 271.514 95.5"
+                                    class="ci-primary" />
+                                <path fill="var(--ci-primary-color, currentColor)"
+                                    d="M256,16C123.452,16,16,123.452,16,256S123.452,496,256,496,496,388.548,496,256,388.548,16,256,16Zm0,448C141.125,464,48,370.875,48,256S141.125,48,256,48s208,93.125,208,208S370.875,464,256,464Z"
+                                    class="ci-primary" />
+                            </svg>
+                        </div>
+                        <p class="footer-content__text">Horario de 10:00 a 14:00 y de 17:00 a 21:00.</p>
+                    </div>
+                </div>
             </div>
             <!-- Redes sociales -->
-            <div class="col-4">
-                <p>Síguenos en nuestras redes sociales:</p>
-                <div class="flex-rrss">
+            <div class="footer-content__div">
+                <p class="footer-content__text">Síguenos en nuestras redes sociales:</p>
+                <div class="footer-content__rrss">
                     <a href="#">
                         <svg class="instagram" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
                             viewBox="0 0 32 32">

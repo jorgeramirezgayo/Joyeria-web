@@ -1,0 +1,42 @@
+// Iconos
+/* Iconos generales */
+.location{
+    width: 1.875em;
+    color: $color-location;
+    vertical-align: bottom;
+    margin-right: 0.3125em;
+}
+
+.phone{
+    width: 1.875em;
+    color: $color-phone;
+    vertical-align: bottom;
+    margin-right: 0.3125em;
+}
+
+.mail{
+    width: 1.875em;
+    color: $color-formulario;
+    vertical-align: bottom;
+    margin-right: 0.3125em;
+}
+
+.clock{
+    width: 1.875em;
+    color: $color-clock;
+    vertical-align: middle;
+    margin-right: 0.3125em;
+}
+
+/* Iconos rrss */
+.instagram{
+    fill: $color-instagram;
+}
+
+.facebook{
+    fill: $color-facebook;
+}
+
+.twitter{
+    fill: $color-twitter;
+}
