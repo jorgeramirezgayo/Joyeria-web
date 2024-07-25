@@ -1,42 +1,41 @@
-// Iconos
-/* Iconos generales */
-.location{
+/* Icons */
+.location {
+    vertical-align: bottom;
     width: 1.875em;
+    margin-right: 0.3125em;
     color: $color-location;
-    vertical-align: bottom;
-    margin-right: 0.3125em;
 }
 
-.phone{
+.phone {
+    vertical-align: bottom;
     width: 1.875em;
+    margin-right: 0.3125em;
     color: $color-phone;
-    vertical-align: bottom;
-    margin-right: 0.3125em;
 }
 
-.mail{
-    width: 1.875em;
-    color: $color-formulario;
+.mail {
     vertical-align: bottom;
+    width: 1.875em;
     margin-right: 0.3125em;
+    color: $color-form;
 }
 
-.clock{
-    width: 1.875em;
-    color: $color-clock;
+.clock {
     vertical-align: middle;
+    width: 1.875em;
     margin-right: 0.3125em;
+    color: $color-clock;
 }
 
-/* Iconos rrss */
-.instagram{
+/* Social media */
+.instagram {
     fill: $color-instagram;
 }
 
-.facebook{
+.facebook {
     fill: $color-facebook;
 }
 
-.twitter{
+.twitter {
     fill: $color-twitter;
 }

@@ -1,82 +1,77 @@
 /* Footer */
-footer{
-    background-color: #F6F6F6;
+footer {
     width: 100%;
+    background-color: #F6F6F6;
 
-    .footer-content{
-        width: $ancho-s;
-        margin: auto;
+    .footer-content {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
         gap: 2.5em;
+        justify-content: space-between;
+        width: $width-s;
+        margin: auto;
         padding: 2.5em 0;
 
         @media (min-width: 768px) {
             flex-wrap: nowrap;
             gap: 0;
-            justify-content: space-evenly;
         }
 
         @media (min-width: 992px) {
-            width: $ancho-l;
+            width: $width-l;
         }
 
         @media (min-width: 1200px) {
-            width: $ancho-xl;
+            width: $width-xl;
         }
-        
-        &__div{
+
+        &__div {
             width: 100%;
 
             @media (min-width: 768px) {
-                width: 25%;
+                padding-right: 2em;
             }
         }
 
-        &__text{
+        &__text {
             padding: 0.3125em 0;
         }
 
-        &__li{
+        &__li {
             padding: 0.3125em 0;
         }
 
-        &__link{
-                    
-            &:hover{
+        &__link {
+
+            &:hover {
                 color: $color-menu-hover;
             }
         }
 
-        &__info{
-            width: 100%;
+        &__info {
             display: flex;
             align-items: flex-start;
+            width: 100%;
             margin: 0.3125em 0;
         }
 
-        &__info-content{
-            width: 100%;
+        &__info-content {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5em;
+            width: 100%;
             margin-top: 0.5em;
         }
 
-        &__info-text{
+        &__info-text {
             width: 100%;
         }
 
-        &__rrss{
-            width: 50%;
-            margin-top: 0.625em;
+        &__rrss {
             display: flex;
-            justify-content: space-between;
-
-            @media (min-width: 768px) {
-                width: 100%;
-            }
+            gap: 2em;
+            width: 100%;
+            margin-top: 0.625em;
         }
     }
 }

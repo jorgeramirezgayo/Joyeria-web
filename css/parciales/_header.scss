@@ -1,50 +1,79 @@
 /* Body */
-.overflow-y{
+.overflow-y {
     overflow-y: hidden;
 }
 
 /* Header*/
+.header--relative {
+    position: relative;
+}
+
 .header {
+    display: flex;
+    justify-content: center;
     width: 100%;
     padding-top: 1.25em;
     padding-bottom: 1.25em;
     box-shadow: 0 0.25em 0.25em $shadow-light;
-    
+
     .header-content {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        
+        width: $width-s;
+
         @media (min-width: 992px) {
-            width: $ancho-l;
-            margin: auto;
             justify-content: space-between;
+            width: $width-l;
+            margin: auto;
         }
 
         @media (min-width: 1200px) {
-            width: $ancho-xl;
+            width: $width-xl;
+        }
+
+        // To put the logo in the center on mobile or on the left on desktop
+        &__menu-div {
+
+            @media (min-width: 992px) {
+                display: none;
+            }
+        }
+
+        &__menu-div--hidden {
+            display: none;
+        }
+
+        // To put the logo in the center on mobile or on the left on desktop
+        &__empty-div {
+            width: 30px;
+            height: 34px;
+
+            @media (min-width: 992px) {
+                display: none;
+            }
         }
 
         .logo {
             width: 7.5em;
-            
+
             &__main {
-                font-family: Voguer Sans;
+                margin-top: 0.125em;
                 font-size: 1.5625em;
+                font-family: Voguer Sans;
                 line-height: 1.5625rem;
                 text-align: center;
-                margin-top: 0.125em;
             }
 
-            &__sub{
-                font-family: Inter;
+            &__sub {
+                margin-top: 0.125em;
                 font-size: 0.5em;
-                text-align: center;
-                margin-top: 0.125em;
+                font-family: Inter;
                 letter-spacing: 0.5rem;
+                text-align: center;
             }
 
-            &__clip{
+            &__clip {
                 clip-path: polygon(100% 0, 100% 45%, 9% 100%, 0 100%, 0 0);
             }
         }
@@ -60,18 +89,17 @@
                 display: flex;
                 gap: 1.5em;
             }
-            
+
             &__li {
                 @media (min-width: 992px) {
                     display: inline;
                 }
             }
 
-            &__link{
+            &__link {
                 @media (min-width: 992px) {
                     font-size: 0.875em;
-                    columns: red;
-    
+
                     &:hover {
                         color: $color-menu-hover;
                     }
@@ -79,84 +107,74 @@
             }
         }
 
-        .menu-icon {
-            display: inline-block;
-            position: absolute;
-            top: 1.25em;
-            left: 8.33%;
-            cursor: pointer;
+        .menu-container {
+            display: flex;
+            gap: 2em;
+            justify-content: center;
+            width: 79.175%;
 
-            @media (min-width: 992px) {
+            .menu-icon {
+                display: inline-block;
+                cursor: pointer;
+
+                @media (min-width: 992px) {
+                    display: none;
+                }
+
+                &__bar1,
+                &__bar2,
+                &__bar3 {
+                    width: 1.875em;
+                    height: 0.125em;
+                    margin: 0.375em 0;
+                    background-color: #333;
+                    transition: 0.4s;
+                }
+            }
+
+            .correctPosition {
+                padding-top: 1.5rem;
+            }
+
+            .nav-menu {
                 display: none;
-            }
+                width: 100%;
+                padding-top: 0.5rem;
 
-            &__bar1, 
-            &__bar2, 
-            &__bar3 {
-                width: 1.875em;
-                height: 0.125em;
-                background-color: #333;
-                margin: 0.375em 0;
-                transition: 0.4s;
-            }
-        }
+                &__li {
+                    padding: 1.25em;
+                    border-bottom: 0.0625em solid $color-menu-hover;
+                }
 
-        .correctPosition {
-            left: 10.4125%;
-        }
+                &__link {
 
-        .nav-menu {
-            display: none;
-            position: absolute;
-            top: -0.9375em;
-            left: 6.25em;
-            width: 12.5em;
-            padding-right: 1.25em;
+                    @keyframes displayLinks {
+                        from {
+                            opacity: 0;
+                        }
 
-            &__li{
-                padding: 1.25em;
-                border-bottom: 0.0625em solid $color-menu-hover;
-            }
-    
-            &__link {
-                animation-name: displayLinks;
-                animation-duration: 2.5s;
-    
-                @keyframes displayLinks {
-                    from {
-                        opacity: 0;
+                        to {
+                            opacity: 1;
+                        }
                     }
-    
-                    to {
-                        opacity: 1;
-                    }
+
+                    animation-name: displayLinks;
+                    animation-duration: 2.5s;
                 }
             }
         }
 
         .background-dark {
-            width: 100%;
-            height: 100%;
             position: absolute;
-            z-index: 2;
             top: 0;
             left: 0;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
             background-color: $shadow-heavy;
         }
 
-        .change {
-            width: 80%;
-            height: 100%;
-            position: absolute;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: white;
-            box-shadow: 0 0.25em 0.25em $shadow-light;
-            overflow: hidden;
-            border-right: 1.25em solid white;
-            animation-name: displayMenu;
-            animation-duration: 1s;
+        .display-menu-container {
 
             @keyframes displayMenu {
                 from {
@@ -168,9 +186,21 @@
                 }
             }
 
-            .menu-icon{
-                animation-name: displayIcon;
-                animation-duration: 2.5s;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            width: 80%;
+            height: 100%;
+            background-color: white;
+            box-shadow: 0 0.25em 0.25em $shadow-light;
+            animation-name: displayMenu;
+            animation-duration: 1s;
+
+            .menu-icon {
 
                 @keyframes displayIcon {
                     from {
@@ -182,14 +212,17 @@
                     }
                 }
 
+                animation-name: displayIcon;
+                animation-duration: 2.5s;
+
                 &__bar1 {
                     transform: translate(0, 0.5em) rotate(45deg);
                 }
-    
+
                 &__bar2 {
                     opacity: 0;
                 }
-    
+
                 &__bar3 {
                     transform: translate(0, -0.5em) rotate(-45deg);
                 }
@@ -201,16 +234,16 @@
         }
     }
 
-    .header--relative {
-        position: relative;
+    .header-content--center {
+        justify-content: center;
     }
-    
-    .flecha_inicio {
-        width: 1.875em;
+
+    .upward_arrow {
         position: fixed;
-        z-index: 1;
-        bottom: 3.125em;
         right: 1.25em;
+        bottom: 3.125em;
+        z-index: 1;
+        width: 1.875em;
 
         @media (min-width: 992px) {
             display: none;

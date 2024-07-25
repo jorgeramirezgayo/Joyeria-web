@@ -1,0 +1,216 @@
+/* Contact */
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+
+    @media (min-width: 992px) {
+        width: $width-l;
+        margin: auto;
+    }
+
+    @media (min-width: 1200px) {
+        width: $width-xl;
+    }
+
+    // Section contact
+    &__section-contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2em;
+        width: $width-s;
+        margin: 3.125em auto 0;
+
+        @media (min-width: 992px) {
+            flex-wrap: nowrap;
+            width: 100%;
+        }
+    }
+
+    &__section-contact__content {
+        width: 100%;
+
+        @media (min-width: 992px) {
+            width: 50%;
+        }
+    }
+
+    &__section-contact__img {
+        vertical-align: bottom;
+        width: 100%;
+        aspect-ratio: 79/70;
+    }
+
+    &__section-contact__form {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+        height: 100%;
+    }
+
+    &__section-contact__title {
+        width: 100%;
+        padding: 1.25em 0;
+        text-align: center;
+
+        @media (min-width: 992px) {
+            padding: 0;
+            text-align: left;
+        }
+    }
+
+    .screenReader {
+        position: absolute;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+    }
+
+    &__section-contact__cell {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3em;
+        width: 100%;
+    }
+
+    &__section-contact__input {
+        margin: 1.25em 0;
+
+        @media (min-width: 992px) {
+            margin: 0;
+        }
+    }
+
+    &__section-contact__input--text {
+        width: 100%;
+        height: 3.125em;
+        padding: 0 1.25em;
+        border: 0.0625em solid $color-form-border;
+
+        &:focus {
+            border: 0.0625em solid $color-form;
+            outline: none;
+        }
+    }
+
+    &__section-contact__input--submit {
+        width: 100%;
+        height: 3.125em;
+        border: none;
+        background-color: $color-form;
+        color: white;
+
+        @media (min-width: 992px) {
+            cursor: pointer;
+        }
+    }
+
+    &__section-contact__textarea {
+        width: 100%;
+        height: 5.625em;
+        margin: 1.25em 0;
+        padding: 1.25em;
+        border: 0.0625em solid $color-form-border;
+        resize: none;
+
+        @media (min-width: 992px) {
+            margin: 0;
+        }
+
+        &:focus {
+            border: 0.0625em solid $color-form;
+            outline: none;
+        }
+    }
+
+    &__section-contact__privacy-policy {
+        width: 100%;
+    }
+
+    &__section-contact__privacy-policy__text {
+        display: inline;
+    }
+
+    &__section-contact--alert {
+        width: 100%;
+        color: #f44336;
+        text-align: left;
+    }
+
+    // Section info
+    &__section-info {
+        width: 100%;
+        margin: 3.125em 0;
+        padding-bottom: 1.875em;
+        background-image: url("./../img/contact_info_bg.webp");
+        background-position: center top;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @media (min-width: 768px) {
+            padding-bottom: 5em;
+        }
+    }
+
+    &__section-info__title {
+        padding: 1.875em 0;
+    }
+
+    &__section-info__container {
+        display: flex;
+        flex-wrap: wrap;
+
+        @media (min-width: 768px) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__section-info__content {
+        width: 100%;
+
+        @media (min-width: 768px) {
+            width: 50%;
+            padding-left: 10%;
+        }
+    }
+
+    &__section-info__content__p {
+        padding: 0.3125em 0;
+
+        @media (min-width: 768px) {
+            text-align: left;
+        }
+    }
+
+    &__section-info__rrss {
+        display: flex;
+        gap: 2em;
+        justify-content: center;
+        width: 100%;
+        padding: 1.25em 0;
+
+        @media (min-width: 768px) {
+            justify-content: flex-start;
+        }
+    }
+
+    // Section maps
+    &__section-maps {
+        width: 100%;
+        margin-bottom: 3.125em;
+    }
+
+    &__section-maps__title {
+        padding-bottom: 1.25em;
+    }
+
+    &__section-maps__map {
+        width: 100%;
+        aspect-ratio: 15/4;
+    }
+}

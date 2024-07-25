@@ -1,0 +1,103 @@
+/* Services */
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+
+    @media (min-width: 992px) {
+        gap: 1.5em;
+        width: $width-l;
+        margin: auto;
+    }
+
+    @media (min-width: 1200px) {
+        width: $width-xl;
+    }
+
+    &__section-service {
+        width: 100%;
+        margin-bottom: 2.5em;
+
+        @media (min-width: 992px) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+
+    &__section-service__img {
+        width: 100%;
+        aspect-ratio: 79/40;
+    }
+
+    &__section-service__title {
+        width: 83.33%;
+        margin: auto;
+        padding-top: 1.25em;
+
+        @media (min-width: 992px) {
+            width: 49%;
+            margin: 0;
+            padding-top: 1.5em;
+            text-align: right;
+        }
+    }
+
+    &__section-service__text {
+        width: 83.33%;
+        margin: auto;
+        padding-top: 1.25em;
+
+        @media (min-width: 992px) {
+            width: 49%;
+            margin: 0;
+            padding-top: 1.5em;
+            text-align: left;
+        }
+    }
+
+    &__banner {
+        width: 100%;
+        margin-bottom: 2.5em;
+        padding: 3em 0;
+        background-image: url('../img/ask_for_a_quote.webp');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        box-shadow: 0 0.25em 0.25em $shadow-medium;
+
+        @media (min-width: 576px) {
+            padding: 4em 0;
+        }
+
+        @media (min-width: 992px) {
+            padding: 6em 0;
+        }
+    }
+
+    &__banner__container {
+        width: 55%;
+        margin: auto;
+        color: white;
+        text-align: center;
+        text-shadow: 0 0.25em 0.25em $shadow-medium;
+    }
+
+    &__banner__title {
+        width: 100%;
+        font-weight: 300;
+        font-size: 1.75em;
+        text-align: center;
+        word-break: break-word;
+        hyphens: auto;
+
+        @media (min-width: 768px) {
+            font-size: 2.5em;
+        }
+    }
+
+    &__banner__link {
+        color: white;
+    }
+}

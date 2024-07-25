@@ -1,12 +1,13 @@
 @font-face {
   font-family: 'Voguer Sans';
   src: local('Voguer Sans Bold'), local('Voguer-Sans-Bold'),
-      url('./fonts/VoguerSans-Bold.woff2') format('woff2'),
-      url('./fonts/VoguerSans-Bold.woff') format('woff'),
-      url('./fonts/VoguerSans-Bold.ttf') format('truetype');
+    url('./fonts/VoguerSans-Bold.woff2') format('woff2'),
+    url('./fonts/VoguerSans-Bold.woff') format('woff'),
+    url('./fonts/VoguerSans-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
 @import "parciales/variables";
@@ -14,7 +15,7 @@
 @import "parciales/icons";
 @import "parciales/header";
 @import "parciales/footer";
-@import "parciales/inicio";
-@import "parciales/servicios";
-@import "parciales/nosotros";
-@import "parciales/contacto";
+@import "parciales/home";
+@import "parciales/services";
+@import "parciales/about_us";
+@import "parciales/contact";

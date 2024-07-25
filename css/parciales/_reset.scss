@@ -1,46 +1,50 @@
-
-/* Generales */
+/* Reset */
 @media (prefers-reduced-motion: reduce) {
     * {
-      animation: none !important;
-      transition: none !important;
+        transition: none !important;
+        animation: none !important;
     }
 }
 
-*{
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-body{
-    font-family: Inter;
-    font-size: 100%;
+body {
     overflow-y: auto;
+    font-size: 100%;
+    font-family: Inter;
 }
 
-img{
+img {
     max-width: 100%;
 }
 
-a{
-    text-decoration: none;
+a {
     color: black;
+    text-decoration: none;
 }
 
-ul{
+ul {
     list-style: none;
 }
 
-h3{
+h3 {
     font-family: Cinzel;
 }
 
-form , input, textarea, select , button , label{
-    font-family: inherit;
+form,
+input,
+textarea,
+select,
+button,
+label {
     font-size: inherit;
+    font-family: inherit;
 }
