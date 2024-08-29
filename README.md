@@ -76,7 +76,7 @@ aprender un poco más y que se pareciera al formato de Instagram.
 ![](https://github.com/jorgeramirezgayo/joyeria-web/blob/main/img/README/Lightbox.webp "Lightbox.")
 
 La página final se puede ver 
-[aquí](https://jorgeramirezgayo.github.io/joyeria-web/).
+[aquí](https://jorgeramirezgayo.github.io/joyeria-web/es/index.html).
 
 Como conclusión, esta página ha sido la primera página real que he hecho y he
 aprendido una barbaridad con ella. La acabé a últimos de Noviembre. Analizándolo
